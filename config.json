@@ -1,0 +1,7 @@
+{
+    "project" : "gulpTemplate",
+
+    "img_dir" : "http://img1.40017.cn/cn/s/touch/2015/newyry/",
+    "css_dir" : "css.40017.cn/cn/min/??/cn/s/touch/2015/yry/",
+    "js_dir"  : "http://js.40017.cn/cn/min/??/cn/s/touch/2015/yry/"
+}
