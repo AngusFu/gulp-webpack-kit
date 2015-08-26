@@ -115,9 +115,9 @@ gulp.task('htmlReplace', function() {
 // css/js 中文件路径替换
 gulp.task('cssReplace', function() {
     return gulp.src(['./dist/css/min/*.css', './dist/js/min/*.js'])
-        .pipe(replace(/(\.\.\/)?\.\/js\/([a-zA-Z0-9\.\-]+\.js)/g,  config['js_dir'] + '$2' ))
-        .pipe(replace(/(\.\.\/)?\.\/css\/([a-zA-Z0-9\.\-]+\.css)/g,  config['css_dir'] + '$2' ))
-        .pipe(replace(/(\.\.\/)?\.\/img\/([a-zA-Z0-9\.\-]+\.(png|jpg|jpeg|gif))/g,  config['img_dir'] + '$2' ))
+        .pipe(replace(/(\.\.\/)?js\/([a-zA-Z0-9\.\-]+\.js)/g,  config['js_dir'] + '$2' ))
+        .pipe(replace(/(\.\.\/)?css\/([a-zA-Z0-9\.\-]+\.css)/g,  config['css_dir'] + '$2' ))
+        .pipe(replace(/(\.\.\/)?img\/([a-zA-Z0-9\.\-]+\.(png|jpg|jpeg|gif))/g,  config['img_dir'] + '$2' ))
         .pipe(gulp.dest('build/'));
 });
 
