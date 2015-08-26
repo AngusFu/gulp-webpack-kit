@@ -1,0 +1,23 @@
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.wrap {
+    margin:  200px auto;
+    width: 320px;
+    height: 100px;
+    background: url(../img/test.jpg) no-repeat;
+    overflow: hidden;
+
+    #btn {
+        margin: 30px auto;
+        width: 200px;
+        height: 40px;
+        background-color: #FFF;
+        line-height: 40px;
+        text-align: center;
+    }
+}

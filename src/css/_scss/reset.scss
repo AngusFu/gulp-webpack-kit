@@ -1,0 +1,29 @@
+/*reset*/ 
+html { font-size: 16px; -ms-text-size-adjust: 100%; -webkit-text-size-adjust: 100%; text-size-adjust: 100%;}
+body{margin:0; padding:0; font-size:12px;  color:#666;}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, input, button, textarea, p, blockquote, th, td, address{padding:0; margin:0; border:0;}
+ul,ol{list-style:none;}
+img,input,select{border:0; vertical-align:middle;}
+h1, h2, h3, h4, h5, h6 {font-weight: normal;}
+table {border-collapse: collapse; border-spacing: 0; }
+a {text-decoration: none;}
+a:active {background-color: transparent;}
+a:active, a:hover, a:focus {outline: 0 none;}
+body, button, input, select, textarea {font-family: 'helvetica neue',tahoma,'hiragino sans gb',stheiti,'wenquanyi micro hei',\5FAE\8F6F\96C5\9ED1,\5B8B\4F53,sans-serif;-ms-text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis;text-autospace: ideograph-alpha ideograph-numeric ideograph-parenthesis;}
+img { border: 0 none; width: auto\9; height: auto; max-width: 100%; vertical-align: top; -ms-interpolation-mode: bicubic; }
+label { cursor: pointer; }
+button, input, select, textarea { font-family: inherit; font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; }
+input, button { *overflow: visible; }
+button, select { text-transform: none; }
+button, html input[type="button"], input[type="reset"], input[type="submit"] { -webkit-appearance: button; cursor: pointer; }
+button[disabled], input[disabled] { cursor: default; }
+input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; *height: 13px; *width: 13px; }
+input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+input[type="search"]::-webkit-search-decoration { -webkit-appearance: none; }
+button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button { height: auto; }
+textarea { overflow: auto; resize: vertical; }
+select:disabled option:checked, option:disabled:checked { color: #D2D2D2; }
+@media screen and (-webkit-min-device-pixel-ratio: 0) { input { line-height: normal !important; } }
+input::-moz-placeholder, textarea::-moz-placeholder { color: darkGray; opacity: 1; }
+select[size], select[multiple], select[size][multiple] { border: 1px solid #AAA; padding: 0; }
