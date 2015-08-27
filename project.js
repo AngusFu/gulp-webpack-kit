@@ -20,24 +20,27 @@ var config = {
         , page_2: './src/js/page_2.js'
     }
 
+
     /**
      * 不引入模块打包的
      * 全局变量声明
      */
     , "externals" : {
-         "react"  : "window.React",
-         "zepto"  : "window.Zepto",
-         "jquery" : "window.jQuery",
-         "Q"      : "window.Q"
+          "react"  : "window.React"
+        , "zepto"  : "window.Zepto"
+        , "jquery" : "window.jQuery"
+        , "Q"      : "window.Q"
     }
+
+
     /**
      * 各不同页面的 css 主文件入口模块
      * 建议放在css文件夹下
      * 而他们的依赖则放在css文件夹下的子目录中
      */
     , "scssEntries" : [
-          './src/css/index.scss',
-          './src/css/index.scss'
+            './src/css/index.scss'
+          , './src/css/index_2.scss'
       ]
 
 
