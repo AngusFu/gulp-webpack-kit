@@ -71,7 +71,9 @@ gulp.task('server', function(done) {
 // default tasks
 gulp.task('default', ['watch'], function() {
     gulp.start('html', 'sass', 'js', 'img', 'server');
-    open('http://localhost:9991');
+    setTimeout(function() {
+        open('http://localhost:9991');
+    }, 5000);
 });
 
 
@@ -88,6 +90,7 @@ gulp.task('watch', function() {
     gulp.watch(['src/img/*'], ['img']);
 
     gulp.watch(['build/**']).on('change', function(file) {
+        console.log('99999999999999');
         livereload.changed(file.path);
     });
 });

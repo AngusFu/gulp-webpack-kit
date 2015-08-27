@@ -29,7 +29,8 @@ node_modules
 # bower packages
 .bower_components
 
-
+#sass-cache
+.sass-cache
 
 build
 
