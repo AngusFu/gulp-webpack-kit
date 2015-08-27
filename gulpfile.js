@@ -61,7 +61,7 @@ gulp.task('server', function(done) {
     http.createServer(
         st({
             path: __dirname + '/build',
-            index: config['homepage'],
+            index: config['homepage'] || 'index.html',
             cache: false
         })
     ).listen(9991, done);
@@ -106,12 +106,12 @@ gulp.task('build', ['clean'], function() {
 
 // 清理
 gulp.task('clean', function() {  
-  return gulp.src(['build/', 'build/', '.sass-cache/'], {read: false})
+  return gulp.src(['build/', 'release/', '.sass-cache/'], {read: false})
     .pipe(clean());
 });
 
 // html 文件中脚本样式路径替换
-gulp.task('_htmlReplace', function() {
+gulp.task('htmlReplace', function() {
     return gulp.src(['./build/*.html'])
         .pipe(replace(/(\.\.\/)?\.\/js\/([a-zA-Z0-9\.\-]+\.js)/g,  config['CDNPath']['js_dir'] + '$2' ))
         .pipe(replace(/(\.\.\/)?\.\/css\/([a-zA-Z0-9\.\-]+\.css)/g,  config['CDNPath']['css_dir'] + '$2' ))
@@ -119,7 +119,7 @@ gulp.task('_htmlReplace', function() {
 });
 
 // css/js 中文件路径替换
-gulp.task('_cssReplace', function() {
+gulp.task('cssReplace', function() {
     return gulp.src(['./build/css/min/*.css', './build/js/min/*.js'])
         .pipe(replace(/(\.\.\/)?js\/([a-zA-Z0-9\.\-]+\.js)/g,  config['CDNPath']['js_dir'] + '$2' ))
         .pipe(replace(/(\.\.\/)?css\/([a-zA-Z0-9\.\-]+\.css)/g,  config['CDNPath']['css_dir'] + '$2' ))
@@ -128,8 +128,8 @@ gulp.task('_cssReplace', function() {
 });
 
 // 发布版
-gulp.task('release', ['build'], function() {
-    gulp.start('_htmlReplace', '_cssReplace');
+gulp.task('release', function() {
+    gulp.start('htmlReplace', 'cssReplace');
 });
 
 
