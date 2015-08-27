@@ -36,8 +36,8 @@ var config = {
      * 而他们的依赖则放在css文件夹下的子目录中
      */
     , "scssEntries" : [
+          './src/css/index.scss',
           './src/css/index.scss'
-        // , './src/css/test.js'
       ]
 
 
