@@ -1,20 +1,19 @@
 var webpack = require('webpack');
 var commonsPlugin = new webpack.optimize.CommonsChunkPlugin('common.js');
 
+var config = require('./project.js');
+
 module.exports = {
     devtool: 'inline-source-map',
     debug: true,
     
     // 表示入口文件
-    entry: {
-          entry1: './src/js/index.js'
-        // , entry2: './src/test.js'
-    }
+    entry: config['scriptEntries']
     
     // 表示输出文件
     , output: {
         path: __dirname,
-        filename: "index.js"
+        filename: "[name].js"
     }
     
     , resolve: {
@@ -26,8 +25,8 @@ module.exports = {
     , externals: {
       'react'  : 'window.React',
       'zepto'  : 'window.Zepto',
-      'jquery' : 'window.jQuery'
-      // 'Q'      : 'window.Q',
+      'jquery' : 'window.jQuery',
+      'Q'      : 'window.Q'
     }
     
     // 凡是遇到jsx结尾的，都用jsx-loader这个插件来加载，
@@ -44,6 +43,6 @@ module.exports = {
         }]
     }
     
-    // , plugins: [commonsPlugin]
+    , plugins: [commonsPlugin]
 };
 
