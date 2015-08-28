@@ -141,18 +141,18 @@ gulp.task('clean', function() {
 // html 文件中脚本样式路径替换
 gulp.task('htmlReplace', function() {
     return gulp.src(['./build/*.html'])
-        .pipe(replace(/(\.\.\/)?\.\/js\/([a-zA-Z0-9\.\-]+\.js)/g,  config['CDNPath']['js_dir'] + '$2' ))
-        .pipe(replace(/(\.\.\/)?\.\/css\/([a-zA-Z0-9\.\-]+\.css)/g,  config['CDNPath']['css_dir'] + '$2' ))
-        .pipe(gulp.dest('release/'));
+        .pipe(replace(/(\.\.\/)?\.\/js\/([a-zA-Z0-9_\.\-]+\.js)/g,  config['CDNPath']['js_dir'] + '$2' ))
+        .pipe(replace(/(\.\.\/)?\.\/css\/([a-zA-Z0-9_\.\-]+\.css)/g,  config['CDNPath']['css_dir'] + '$2' ))
+        .pipe(gulp.dest('./release/'));
 });
 
 // css/js 中文件路径替换
 gulp.task('cssReplace', function() {
     return gulp.src(['./build/css/min/*.css', './build/js/min/*.js'])
-        .pipe(replace(/(\.\.\/)?js\/([a-zA-Z0-9\.\-]+\.js)/g,  config['CDNPath']['js_dir'] + '$2' ))
-        .pipe(replace(/(\.\.\/)?css\/([a-zA-Z0-9\.\-]+\.css)/g,  config['CDNPath']['css_dir'] + '$2' ))
-        .pipe(replace(/(\.\.\/)?img\/([a-zA-Z0-9\.\-]+\.(png|jpg|jpeg|gif))/g,  config['CDNPath']['img_dir'] + '$2' ))
-        .pipe(gulp.dest('release/'));
+        .pipe(replace(/(\.\.\/)?js\/([a-zA-Z0-9_\.\-]+\.js)/g,  config['CDNPath']['js_dir'] + '$2' ))
+        .pipe(replace(/(\.\.\/)?css\/([a-zA-Z0-9_\.\-]+\.css)/g,  config['CDNPath']['css_dir'] + '$2' ))
+        .pipe(replace(/(\.\.\/)?img\/([a-zA-Z0-9_\.\-]+\.(png|jpg|jpeg|gif))/g,  config['CDNPath']['img_dir'] + '$2' ))
+        .pipe(gulp.dest('./release/'));
 });
 
 // 发布版
