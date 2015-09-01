@@ -31,6 +31,7 @@ node_modules
 
 #sass-cache
 .sass-cache
+sass-cache
 
 build
 

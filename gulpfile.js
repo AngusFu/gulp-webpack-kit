@@ -2,8 +2,8 @@ var gulp = require('gulp'),
     sass = require('gulp-ruby-sass'),
     autoprefixer = require('gulp-autoprefixer'),
     minifycss = require('gulp-minify-css'),
-    sourcemaps = require('gulp-sourcemaps'),
-
+    // sourcemaps = require('gulp-sourcemaps'),
+ 
     livereload = require('gulp-livereload'),
     uglify = require('gulp-uglify'),
     webpack = require('webpack-stream'),
@@ -51,17 +51,17 @@ while(len--){
             return sass(scssArr[len], {
                       style: 'expanded' // nested,compact,expanded,compressed
                     // , sourcemap: true
+                    , cacheLocation: './sass-cache',
                 })
                 .pipe(plumber())
-                .pipe(sourcemaps.init())
-                .pipe(sourcemaps.write())
+                // .pipe(sourcemaps.init())
+                // .pipe(sourcemaps.write())
                 .pipe(autoprefixer('last 4 version', 'safari 5', 'firefox', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4'))
                 .pipe(gulp.dest('build/css'))
                 .pipe(minifycss())
                 .pipe(gulp.dest('build/css/min'));
         });
     })(len);
-
 }
 
 gulp.task('css', function() {
