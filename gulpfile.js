@@ -44,14 +44,17 @@ var scssArr = config['scssEntries'],
 var scssTasks = [];
 
 while(len--){
-    !(function (len) {
-        scssTasks.push('sass' + len);
+    !(function (idx) {
+        scssTasks.push('sass' + idx);
         // styles
-        gulp.task('sass' + len, function() {
-            return sass(scssArr[len], {
+        gulp.task('sass' + idx, function() {
+            return sass(scssArr[idx], {
                       style: 'expanded' // nested,compact,expanded,compressed
                     // , sourcemap: true
                     , cacheLocation: './sass-cache',
+                })
+                .on('error', function (err) {
+                    console.error('Error!', err.message);
                 })
                 .pipe(plumber())
                 // .pipe(sourcemaps.init())
@@ -111,15 +114,15 @@ gulp.task('default', ['watch'], function() {
 gulp.task('watch', function() {
     livereload.listen();
 
-    gulp.watch(['src/*.js', 'src/**/*.js'], ['js']);
+    gulp.watch(['src/**/*.js'], ['js']);
 
-    gulp.watch(['src/*.scss', 'src/**/*.scss'], ['css']);
+    gulp.watch(['src/**/*.scss'], ['css']);
 
     gulp.watch(['src/*.html'], ['html']);
 
     gulp.watch(['src/img/*'], ['img']);
 
-    gulp.watch(['build/**']).on('change', function(file) {
+    gulp.watch(['build/**/*']).on('change', function(file) {
         livereload.changed(file.path);
     });
 });
